@@ -1,0 +1,342 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+/* For all elements of the page */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    background: none;
+    outline: none;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.container-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/********************************************************/
+/*Authorization Block*/
+/********************************************************/
+
+.authorization-block {
+    width: 500px;
+    margin: 0;
+    padding: 25px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    z-index: 3;
+}
+
+.authorization-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authorization-logotype-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.authorization-logotype {
+    width: 50px;
+    background-size: cover;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    margin-bottom: 20px;
+}
+
+.authorization-logotype-text {
+    max-width: 300px;
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* Navigation */
+.authorization-navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f9f9f9;
+}
+
+.authorization-navigation-item {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 600;
+    padding-right: 20px;
+    transition: color .2s linear, border-bottom-color .2s linear;
+}
+
+.authorization-navigation-item.active {
+    cursor: default;
+    color: #004AF4;
+    margin-bottom: -3px;
+}
+
+.authorization-navigation-item.active:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 0;
+    border-bottom: 3px solid #004AF4;
+}
+
+/*********************************/
+/* Sign In / Sign Up */
+/*********************************/
+
+.flex-column-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#signin, #signup {
+    display: none;
+}
+
+#signin.active, #signup.active {
+    display: block;
+}
+
+/* Form Block */
+.form-block {
+    width: 100%;
+    margin: 20px auto auto auto;
+}
+
+.form-container {
+    width: 100%;
+}
+
+/* Form Field */
+.form-field {
+    margin-top: 15px;
+    position: relative;
+}
+
+.form-field:first-child {
+    margin-top: 0;
+}
+
+.form-label-field {
+    cursor: default;
+    width: 100%;
+}
+
+.form-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+}
+
+.form-input-field {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    vertical-align: top;
+}
+
+.form-input {
+    cursor: text;
+    position: relative;
+    width: 100%;
+    height: 35px;
+    appearance: none;
+    backgroun-clip: padding-box;
+    border: 2px solid #E8F4FF;
+    background: #E8F4FF;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 5px 0 0 0;
+    color: #000;
+    font-size: 15px;
+    vertical-align: top;
+    outline: 0;
+    z-index: 2;
+    transition: all .1s linear;
+}
+
+#password {
+    padding: 0 40px 0 10px;
+}
+
+.form-input:hover {
+    transition: all .1s linear;
+}
+
+.form-input.focus {
+    border: 2px solid #004AF4;
+    background: #fff;
+    transition: all .1s linear;
+}
+
+/* Password Show Block */
+.form-password-show-block {
+    position: absolute;
+    z-index: 300;
+    top: 14px;
+    right: 15px;
+}
+
+/* Password Show Icon */
+.form-password-show {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: none;
+}
+
+.form-password-show.active {
+    display: block;
+}
+
+/* Password Hide Icon */
+.form-password-hide {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    fill: rgba(179, 179, 179, 0.71);
+    display: none;
+}
+
+.form-password-hide.active {
+    display: block;
+}
+
+/* Password Forgot */
+.signin-form-password-forgot {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.signin-form-password-forgot {
+    cursor: pointer;
+    font-size: 1.01rem;
+    font-weight: 500;
+    color: #0057e2;
+    text-decoration: none;
+    transition: all .1s linear;
+}
+
+.signin-form-password-forgot:hover {
+    text-decoration: underline;
+}
+
+/* Agreement */
+.signup-form-agreement {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.signup-form-agreement-text {
+    color: #888;
+}
+
+
+.signup-form-agreement-text-link {
+    color: #0069EC;
+}
+
+.signup-form-agreement-text-link:hover {
+    text-decoration: underline;
+}
+
+/* Button Submit */
+.form-submit {
+    position: relative;
+    margin: 20px 0;
+}
+
+.form-submit-button {
+    width: 100%;
+    cursor: default;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #D4D4D4;
+    text-align: center;
+    background: rgba(229, 229, 229, 0.9);
+    background: #F9F9F9;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    transition: all .1s linear;
+}
+
+.form-submit-button.active {
+    cursor: pointer;
+    background: #0069EC;
+    color: #fff;
+}
+
+.form-submit-button.active:hover {
+    background: #004AF4;
+    color: #fff;
+}
